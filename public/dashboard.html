@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dashboard — staging</title>
+<link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <main class="card dashboard-card">
+    <div class="env-tag">test env — authenticated</div>
+    <div class="row">
+      <h1 id="greeting">Loading…</h1>
+      <button class="logout-btn" id="logout-btn">Sign out</button>
+    </div>
+    <p class="subtitle">This page only renders for requests carrying a valid signed session cookie. Everything else you build goes here or behind the same middleware.</p>
+    <div class="footer-note">
+      Protected by <code>functions/_middleware.js</code>. Swap <code>creds.txt</code> for a real database later — the session and cookie logic won't need to change.
+    </div>
+  </main>
+
+  <script>
+    async function loadUser() {
+      const res = await fetch("/api/me");
+      if (!res.ok) {
+        window.location.href = "/?authRequired=1";
+        return;
+      }
+      const data = await res.json();
+      document.getElementById("greeting").textContent = `Hey, ${data.username}`;
+    }
+
+    document.getElementById("logout-btn").addEventListener("click", async () => {
+      await fetch("/api/logout", { method: "POST" });
+      window.location.href = "/";
+    });
+
+    loadUser();
+  </script>
+</body>
+</html>

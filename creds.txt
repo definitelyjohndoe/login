@@ -1,0 +1,4 @@
+# Dummy test credentials — format: username:password (one per line)
+# Lines starting with # are ignored. Delete this file's contents any time.
+alice:testpass123
+bob:hunter2

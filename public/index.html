@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sign in — staging</title>
+<link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <main class="card">
+    <div class="env-tag">test env — dummy creds</div>
+    <h1>Sign in</h1>
+    <p class="subtitle">Auth module under test. Credentials are read from a disposable list, not a database yet.</p>
+
+    <form id="login-form" novalidate>
+      <div class="field">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" autocomplete="username" required />
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" autocomplete="current-password" required />
+      </div>
+      <button type="submit" id="submit-btn">Sign in</button>
+      <div id="message" class="message" role="status" aria-live="polite"></div>
+    </form>
+
+    <div class="footer-note">
+      Try <code>alice</code> / <code>testpass123</code> or <code>bob</code> / <code>hunter2</code>.
+      Edit or empty <code>creds.txt</code> in the repo to change or clear test accounts.
+    </div>
+  </main>
+
+  <script>
+    const form = document.getElementById("login-form");
+    const messageEl = document.getElementById("message");
+    const submitBtn = document.getElementById("submit-btn");
+
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("authRequired")) {
+      messageEl.textContent = "Sign in to continue.";
+      messageEl.className = "message info";
+    }
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      messageEl.textContent = "";
+      messageEl.className = "message info";
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Signing in…";
+
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      try {
+        const res = await fetch("/api/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ username, password }),
+        });
+        const data = await res.json();
+
+        if (data.ok) {
+          window.location.href = "/dashboard";
+          return;
+        }
+
+        messageEl.textContent = data.error || "Sign in failed.";
+        messageEl.className = "message error";
+      } catch (err) {
+        messageEl.textContent = "Network error — is the server running?";
+        messageEl.className = "message error";
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Sign in";
+      }
+    });
+  </script>
+</body>
+</html>
