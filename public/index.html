@@ -3,33 +3,57 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Sign in — staging</title>
-<link rel="stylesheet" href="/style.css" />
+<title>Log in — My App</title>
+<link rel="stylesheet" href="/home.css" />
 </head>
 <body>
-  <main class="card">
-    <div class="env-tag">test env — dummy creds</div>
-    <h1>Sign in</h1>
-    <p class="subtitle">Auth module under test. Credentials are read from a disposable list, not a database yet.</p>
 
-    <form id="login-form" novalidate>
-      <div class="field">
-        <label for="username">Username</label>
-        <input type="text" id="username" name="username" autocomplete="username" required />
+  <nav class="topnav">
+    <div class="topnav-inner">
+      <a class="brand" href="/">My App</a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/">Log In</a>
+        <a href="/" class="nav-cta">Sign Up</a>
       </div>
-      <div class="field">
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" autocomplete="current-password" required />
-      </div>
-      <button type="submit" id="submit-btn">Sign in</button>
-      <div id="message" class="message" role="status" aria-live="polite"></div>
-    </form>
+    </div>
+  </nav>
 
-    <div class="footer-note">
-      Try <code>alice</code> / <code>testpass123</code> or <code>bob</code> / <code>hunter2</code>.
-      Edit or empty <code>creds.txt</code> in the repo to change or clear test accounts.
+  <main class="hero">
+    <div class="hero-inner">
+      <div class="pitch">
+        <h1>Welcome back</h1>
+        <p>Sign in to pick up right where you left off. New here? Create an account to get started.</p>
+      </div>
+
+      <div class="card">
+        <h2>Log in</h2>
+        <p class="subtitle">Enter your username and password to continue.</p>
+
+        <form id="login-form" novalidate>
+          <div class="field">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" autocomplete="username" required />
+          </div>
+          <div class="field">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" autocomplete="current-password" required />
+          </div>
+          <button type="submit" id="submit-btn">Log in</button>
+          <div id="message" class="message" role="status" aria-live="polite"></div>
+        </form>
+
+        <div class="footer-note">
+          Try <code>alice</code> / <code>testpass123</code> or <code>bob</code> / <code>hunter2</code>.
+          Edit or empty <code>creds.txt</code> in the repo to change or clear test accounts.
+        </div>
+      </div>
     </div>
   </main>
+
+  <footer class="sitefooter">
+    &copy; 2026 My App
+  </footer>
 
   <script>
     const form = document.getElementById("login-form");
@@ -72,7 +96,7 @@
         messageEl.className = "message error";
       } finally {
         submitBtn.disabled = false;
-        submitBtn.textContent = "Sign in";
+        submitBtn.textContent = "Log in";
       }
     });
   </script>
