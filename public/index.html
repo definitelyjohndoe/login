@@ -8,105 +8,66 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap">
   <style>
     body { font-family: 'Lato', sans-serif; }
-    .btn-blue { background:#fd5573; color:white; border:none; }
-    .btn-blue:hover { background:#e9e9eb; }
-    .btn-redacted { background:#262637; color:white; }
-    .btn-redacted:hover { background:#fd5573; }
-    .header { color:#262637; }
-    .form-body { display:block; padding-bottom:12px; }
+    .nav-link { color: #262637; }
+    .nav-link:hover { color: #fd5573; }
+    .btn-red { background:#fd5573; color:white; }
+    .btn-red:hover { background:#e9e9eb; }
+    .btn-purple { background:#8e44ad; color:white; }
+    .btn-purple:hover { background:#9b59b6; }
+    .btn-blue { background:#3498db; color:white; }
+    .btn-blue:hover { background:#2980b9; }
+    .btn-log { background:#262637; color:white; }
+    .btn-log:hover { background:#e9e9eb; }
   </style>
 </head>
 <body class="bg-gray-50">
-  <!-- Exact top header -->
-  <div class="bg-[#262637] text-white">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+  <!-- Top navigation -->
+  <div class="bg-[#262637] text-white py-3">
+    <div class="container mx-auto px-6 flex justify-between items-center">
       <div class="flex items-center gap-4">
         <a href="/" class="text-xl font-bold">redacted</a>
-        <div class="flex gap-6">
-          <a href="/login" class="hover:text-[#fd5573]">Login</a>
-          <a href="/sign-up" class="hover:text-[#fd5573]">Sign Up</a>
-          <a href="/list-your-redacted" class="bg-[#fd5573] px-6 py-2 rounded hover:bg-rose-600">List redacted</a>
-        </div>
       </div>
-      <div class="flex items-center gap-6">
-        <a href="tel:+233506866060">+233 506 866 060</a>
-        <a href="mailto:info@example.com">info@example.com</a>
+      <div class="flex gap-6">
+        <a href="/login" class="hover:text-[#fd5573]">Login</a>
+        <a href="/sign-up" class="hover:text-[#fd5573]">Sign Up</a>
+        <a href="/list-your-redacted" class="bg-[#fd5573] px-6 py-2 rounded hover:bg-rose-600">List Property</a>
       </div>
     </div>
   </div>
 
   <div class="container mx-auto px-6 py-12">
-    <div class="flex flex-col md:flex-row gap-8 items-start">
-      <!-- Left image & benefits (exact) -->
-      <div class="md:w-1/2">
-        <h3 class="text-3xl font-bold mb-6">App for Agents</h3>
-        <img src="https://subdomain.deliveryfront.net/assets2/images/agent-app-art2.png" alt="Benefits of redacted app for agents" class="rounded-xl shadow-lg">
-        <div class="flex gap-4 mt-6">
-          <a href="https://play.redacted.com/store/apps/details?id=com.redacted.agent" target="_blank">
-            <img src="https://play.redacted.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" alt="Get it on redacted Play" class="h-20">
-          </a>
-          <a href="https://apps.apple.com/us/app/redacted-agent/id1440981475" target="_blank">
-            <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1542758400" alt="Download on the App Store" class="h-20">
-          </a>
-        </div>
+    <div class="flex flex-col md:flex-row gap-8">
+      <!-- Left side: OAuth buttons -->
+      <div class="md:w-1/2 space-y-3">
+        <button class="btn-red w-full py-3 text-lg rounded-lg">Log in using Google Account</button>
+        <button class="btn-purple w-full py-3 text-lg rounded-lg">Log in using Yahoo ID</button>
+        <button class="btn-blue w-full py-3 text-lg rounded-lg">Log in using Facebook</button>
+        <p class="text-center mt-4">or <a href="/sign-up" class="font-bold">Sign Up</a> for an account</p>
       </div>
 
-      <!-- Login form - exact match to your original -->
+      <!-- Right side: Email / Password -->
       <div class="md:w-1/2 bg-white rounded-2xl shadow-xl p-8">
-        <div class="form-heading mb-8">
-          <h3 class="header text-3xl font-bold">Log In</h3>
-          <hr class="border-t-2 border-[#262637] mt-3">
-        </div>
+        <h2 class="text-3xl font-bold text-[#262637] mb-6">Log In</h2>
 
-        <div class="flex gap-8">
-          <div class="flex-1">
-            <div class="form-body space-y-6">
-              <div>
-                <label class="block text-sm font-medium mb-2">Your email address</label>
-                <input id="regmail" type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#fd5573]" placeholder="Email address" required>
-              </div>
-              <div>
-                <label class="block text-sm font-medium mb-2">Your password</label>
-                <input id="pass1" type="password" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#fd5573]" placeholder="Password" required>
-              </div>
-            </div>
-
-            <div class="form-footer mt-8">
-              <button onclick="performLogin()" class="btn btn-large btn-blue btn-block w-full py-3 text-lg bg-[#fd5573] hover:bg-rose-600 text-white font-semibold rounded-lg">
-                Log in
-              </button>
-              <p class="center mt-4">
-                <a id="href" class="text-sm cursor-pointer hover:text-[#fd5573]">Forgot your password?</a>
-              </p>
-            </div>
+        <div class="space-y-6">
+          <div>
+            <label class="block text-sm font-medium mb-2">Your email address</label>
+            <input id="regmail" type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#fd5573]" placeholder="Email address" required>
           </div>
-
-          <div class="flex-1 border-l border-gray-200 pl-8">
-            <div class="form-heading mb-6">
-              <h4 class="header">Using your account</h4>
-            </div>
-            <div class="space-y-4">
-              <a href="https://accounts.redacted.com/o/oauth2/auth?response_type=code&redirect_uri=https%3A%2F%2Fexample.com%2Fregister2%2Fauth&client_id=794363391248.apps.redactedusercontent.com&scope=openid+email+profile&access_type=offline&approval_prompt=auto&state=1836598073" 
-                 class="btn btn-large btn-block btn-redacted w-full py-3 text-lg rounded-lg">
-                Log in using redacted Account
-              </a>
-
-              <a href="https://api.login.yahoo.com/oauth2/request_auth?client_id=dj0yJmk9Zm81d2c4NE9Zdm5TJmQ9WVdrOWFubHBWVVoyTTJVbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmc3Y9MCZ4PTEy&redirect_uri=https%3A%2F%2Fexample.com%2FregisterY2%2Fauth&state=9f864b51&response_type=code" 
-                 class="btn btn-large btn-block btn-yh w-full py-3 text-lg rounded-lg">
-                Log in using Yahoo ID
-              </a>
-
-              <a href="https://www.facebook.com/v2.12/dialog/oauth?client_id=1631778193545190&redirect_uri=https%3A%2F%2Fexample.com%2FregisterF2%2Fauth&state=58392f4c&scope=email" 
-                 class="btn btn-large btn-block btn-yh w-full py-3 text-lg rounded-lg" style="background-color:#4873A3;">
-                Log in using Facebook
-              </a>
-            </div>
+          <div>
+            <label class="block text-sm font-medium mb-2">Your password</label>
+            <input id="pass1" type="password" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#fd5573]" placeholder="Password" required>
           </div>
         </div>
 
-        <p class="text-center mt-6 text-sm">
-          or <a href="/sign-up" class="font-bold">Sign Up</a> for an account
-        </p>
+        <div class="mt-8">
+          <button onclick="performLogin()" class="btn-log w-full py-3 text-lg font-semibold rounded-lg">
+            Log In
+          </button>
+          <p class="text-center mt-4">
+            <a id="href" class="text-sm cursor-pointer hover:text-[#fd5573]">Forgot your password?</a>
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -121,14 +82,12 @@
         return;
       }
 
-      // === SIMPLE DUMMY USERS (replace with real text file later) ===
       const dummyUsers = {
         "test@example.com": "password123",
         "demo@realestate.com": "securepass456"
       };
 
       if (dummyUsers[email.toLowerCase()] === btoa(pass)) {
-        // Redirect to your second app
         window.location.href = "https://your-second-app.com?from=test-site&session=" + btoa(email + ":" + pass);
       } else {
         document.getElementById('pass1').value = "";
