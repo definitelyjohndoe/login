@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Download Our App</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f7fb;
+      color: #172033;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 55px 20px;
+    }
+
+    .logo {
+      width: 100px;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      margin: 0 0 12px;
+      font-size: 38px;
+    }
+
+    header p {
+      margin: 0;
+      color: #cbd5e1;
+      font-size: 18px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .intro h2 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .intro p {
+      color: #64748b;
+    }
+
+    .downloads {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 18px;
+      padding: 35px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .os-image {
+      width: 110px;
+      height: 110px;
+      object-fit: contain;
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      font-size: 27px;
+      margin: 5px 0 10px;
+    }
+
+    .description {
+      color: #64748b;
+      line-height: 1.6;
+    }
+
+    .version {
+      display: inline-block;
+      background: #eef2ff;
+      color: #3730a3;
+      padding: 7px 13px;
+      border-radius: 20px;
+      font-size: 14px;
+      margin: 10px 0 20px;
+    }
+
+    .requirements {
+      text-align: left;
+      background: #f8fafc;
+      padding: 15px 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+      color: #475569;
+      line-height: 1.7;
+    }
+
+    .download-button {
+      display: block;
+      padding: 15px 20px;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      border-radius: 9px;
+      font-weight: bold;
+      font-size: 17px;
+      margin-top: 20px;
+    }
+
+    .download-button:hover {
+      background: #1d4ed8;
+    }
+
+    .linux-button {
+      background: #ea580c;
+    }
+
+    .linux-button:hover {
+      background: #c2410c;
+    }
+
+    .other {
+      text-align: center;
+      margin-top: 45px;
+      color: #64748b;
+    }
+
+    footer {
+      margin-top: 60px;
+      padding: 30px;
+      text-align: center;
+      background: #111827;
+      color: #94a3b8;
+      font-size: 14px;
+    }
+
+    @media (max-width: 700px) {
+      .downloads {
+        grid-template-columns: 1fr;
+      }
+
+      header h1 {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+
+  <!-- Replace this with your own logo -->
+  <img src="logo.png" alt="Your Company Logo" class="logo">
+
+  <h1>Download Our App</h1>
+
+  <p>
+    Get the latest version for your computer.
+  </p>
+
+</header>
+
+
+<div class="container">
+
+  <div class="intro">
+
+    <h2>Choose Your Platform</h2>
+
+    <p>
+      Download the official desktop application for your operating system.
+    </p>
+
+  </div>
+
+
+  <div class="downloads">
+
+
+    <!-- WINDOWS -->
+
+    <div class="card">
+
+      <!-- Replace with your own Windows image -->
+      <img
+        src="windows.png"
+        alt="Windows"
+        class="os-image"
+      >
+
+      <h3>Windows</h3>
+
+      <p class="description">
+        Download our desktop application for Windows
+        computers.
+      </p>
+
+      <span class="version">
+        Latest Version: 1.0.0
+      </span>
+
+      <div class="requirements">
+
+        <strong>System requirements</strong>
+
+        <br>
+
+        Windows 10 or later
+
+        <br>
+
+        64-bit processor
+
+        <br>
+
+        Internet connection required
+
+      </div>
+
+      <!-- Replace this URL with your actual Windows download -->
+      <a
+        href="YOUR-WINDOWS-DOWNLOAD-LINK"
+        class="download-button"
+      >
+        Download for Windows
+      </a>
+
+      <p>
+        <small>
+          Windows installer (.exe)
+        </small>
+      </p>
+
+    </div>
+
+
+    <!-- LINUX -->
+
+    <div class="card">
+
+      <!-- Replace with your own Linux image -->
+      <img
+        src="linux.png"
+        alt="Linux"
+        class="os-image"
+      >
+
+      <h3>Linux</h3>
+
+      <p class="description">
+        Download our desktop application for Linux
+        distributions.
+      </p>
+
+      <span class="version">
+        Latest Version: 1.0.0
+      </span>
+
+      <div class="requirements">
+
+        <strong>System requirements</strong>
+
+        <br>
+
+        64-bit Linux
+
+        <br>
+
+        Ubuntu, Debian or compatible distribution
+
+        <br>
+
+        Internet connection required
+
+      </div>
+
+      <!-- Replace this URL with your actual Linux download -->
+      <a
+        href="YOUR-LINUX-DOWNLOAD-LINK"
+        class="download-button linux-button"
+      >
+        Download for Linux
+      </a>
+
+      <p>
+        <small>
+          Linux package / AppImage
+        </small>
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="other">
+
+    <p>
+      Need help installing the application?
+    </p>
+
+    <a href="YOUR-SUPPORT-PAGE">
+      View Installation Guide
+    </a>
+
+  </div>
+
+</div>
+
+
+<footer>
+
+  © 2026 Your Company. All rights reserved.
+
+</footer>
+
+</body>
+</html>
+
+

